@@ -11,7 +11,7 @@ let sebetArr = []
 function dataGetir() {
     cards.innerHTML = ''
 
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://69b9b534b3dcf7e0b4bb045d.mockapi.io/mal/mallar')
         .then(res => res.json())
         .then(data => {
             mehsullar = data
@@ -112,3 +112,29 @@ function sebetAc() {
 function detayaGet(id) {
     location.href = `detail.html?id=${id}`
 }
+let personal = document.getElementById('personal')
+
+function personalGetir() {
+    personal.innerHTML = ''
+
+    fetch('https://69b9b40db3dcf7e0b4bb0212.mockapi.io/insanlar')
+        .then(res => res.json())
+        .then(data => {
+            for (let i = 0; i < data.length; i++) {
+                personal.innerHTML += `
+                    <div class="personalCard">
+                        <div class="personalImg">
+                            <img src="${data[i].imagee}">
+                        </div>
+                        <div class="personalBody">
+                            <h3>${data[i].name}</h3>
+                            <p>${data[i].job}</p>
+                            <p>${data[i].mail}</p>
+                        </div>
+                    </div>
+                `
+            }
+        })
+}
+
+personalGetir()

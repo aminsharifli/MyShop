@@ -3,7 +3,7 @@ let detail = document.getElementById('detail')
 let link = new URLSearchParams(location.search)
 let id = link.get('id')
 
-fetch(`https://fakestoreapi.com/products/${id}`)
+fetch(`https://69b9b534b3dcf7e0b4bb045d.mockapi.io/mal/mallar/${id}`)
     .then(res => res.json())
     .then(data => {
         detail.innerHTML = `
@@ -11,9 +11,6 @@ fetch(`https://fakestoreapi.com/products/${id}`)
             <div class="detayYazi">
                 <h2>${data.title}</h2>
                 <p><b>Qiymet:</b> $${data.price}</p>
-                <p><b>Kateqoriya:</b> ${data.category}</p>
-                <p><b>Aciqlama:</b> ${data.description}</p>
-                <p><b>Reytinq:</b> ${data.rating.rate}</p>
             </div>
         `
     })
